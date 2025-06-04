@@ -38,7 +38,83 @@
     <link rel="stylesheet" href="css/flaticon.css" />
     <link rel="stylesheet" href="css/icomoon.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTARhP7Ig0pkfYQZ7NwBEZom21jDPnTkjx02bwU63Dn6uUtnjtuJ2RU2y_QFAOfhUb8k-U&usqp=CAU"/>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTARhP7Ig0pkfYQZ7NwBEZom21jDPnTkjx02bwU63Dn6uUtnjtuJ2RU2y_QFAOfhUb8k-U&usqp=CAU"
+    />
+    <style>
+
+
+      .menu-wrap {
+        width: 100% !important;
+        /* max-width: 800px; */
+        overflow: hidden;
+        position: relative;
+      }
+
+      .menu__item {
+        position: relative;
+        text-align: center;
+        padding: 40px 0;
+        border-bottom: 1px solid rgba(18, 1, 1, 0.178);
+        width: 100% !important;
+        overflow: hidden;
+      }
+
+      .menu__item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -100%;
+        width: 100% !important;
+        height: 100%;
+        background-color: black;
+        z-index: 1;
+        transition: bottom 0.4s ease;
+      }
+
+      .menu__item:hover::before {
+        bottom: 0;
+      }
+
+      .menu__item-link {
+        font-size: 2rem;
+        color: rgb(34, 32, 32);
+        font-weight: 600;
+        text-decoration: none;
+        position: relative;
+        z-index: 2;
+        transition: color 0.3s ease;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .menu__item:hover .menu__item-link {
+        color: #ffbf00;
+      }
+
+      #preview-img {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 450px;
+        height: auto;
+        border-radius: 12px;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+      }
+
+      @media (max-width: 768px) {
+  #preview-img {
+    display: none;
+  }
+}
+
+    </style>
   </head>
   <body>
     <nav
@@ -61,7 +137,7 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-             <li class="nav-item">
+            <li class="nav-item">
               <a href="index.html" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
@@ -74,7 +150,10 @@
               <a href="contact.html" class="nav-link">Contact</a>
             </li>
             <li class="nav-item">
-              <a href="https://drive.google.com/file/d/17zIK9JqXN4BjFf-oYf0gS6qQfbkIbH66/view?usp=sharing" class="nav-link" target="_blank"
+              <a
+                href="https://drive.google.com/file/d/17zIK9JqXN4BjFf-oYf0gS6qQfbkIbH66/view?usp=sharing"
+                class="nav-link"
+                target="_blank"
                 ><u><b>My Resume</b></u></a
               >
             </li>
@@ -106,414 +185,40 @@
       </div>
     </section>
 
-    <section class="ftco-section ftco-portfolio">
-      <!-- <div class="container-fluid">
-        <div class="row justify-content-center pb-3">
-          <div class="col-md-12 mb-5 heading-section text-center ftco-animate">
-            <h2 class="mb-5">My Works &amp; <span>Projects</span></h2>
-          </div>
-        </div>
-      </div> -->
+    <!-- <div class="project-list">
+      <ul>
+        <li data-img="images/onwayproject.png">Onway Repair</li>
+        <li data-img="images/academy.png">Al Itqan Academy</li>
+        <li data-img="images/toskr.png">Toskr Mail</li>
+      </ul>
+      <img id="preview-img" src="" alt="Preview" />
+    </div> -->
 
-      <div class="container">
-        <div class="row no-gutters">
-          <div class="col-md-12 portfolio-wrap">
-            <div class="row no-gutters align-items-center">
-              <div
-                class="col-md-12 img js-fullheight pro"
-                style="
-                  background-image: url(images/onwayproject.png);
-                  border-radius: 10px;
-                "
-              ></div>
-              <div class="col-md-7">
-                <div class="text pt-5 pl-0 pl-lg-5 pl-md-4 ftco-animate">
-                  <div class="px-4 px-lg-4">
-                    <div class="desc">
-                      <!-- <div class="top"> -->
-                      <!-- <span class="subheading"> {12/2022 - 03/2023}</span> -->
-                      <h2 class="mb-4">
-                        <a href="work.html">Onway Repair</a>
-                      </h2>
-                      <!-- </div> -->
-                      <div class="absolute">
-                        <p>
-                          A user-friendly platform that allows customers to
-                          select their <b>mobile device</b>, choose the
-                          <b>issue</b>, and book a doorstep repair service. The
-                          project streamlines the repair process with real-time
-                          service tracking and secure appointment booking,
-                          offering convenience and reliability.
-                        </p>
-                        <p>
-                          <a href="https://onwayrepair.com/" class="custom-btn">
-                            view Demo</a
-                          >
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="menu-wrap">
+      <ul class="menu project-list">
+        <a href="https://onwayrepair.com/" target="_blank" class="custom-btn">
+          <li class="menu__item" data-img="images/onwayproject.png">
+            <span class="menu__item-link">Onway Repair</span>
+          </li></a
+        >
 
-      <div class="container">
-        <div class="row no-gutters">
-          <div class="col-md-12 portfolio-wrap">
-            <div class="row no-gutters align-items-center">
-              <div
-                class="col-md-12 js-fullheight pro"
-                style="
-                  background-image: url(images/academy.png);
-                  border-radius: 10px;
-                  height: 100%;
-                  width: 100%;
-                  object-fit: cover !important;
-                "
-              ></div>
-              <div class="col-md-7">
-                <div class="text pt-5 pl-0 pl-lg-5 pl-md-4 ftco-animate">
-                  <div class="px-4 px-lg-4">
-                    <div class="desc">
-                      <!-- <div class="top"> -->
-                      <!-- <span class="subheading"> {12/2022 - 03/2023}</span> -->
-                      <h2 class="mb-4"><a href="work.html">Academy</a></h2>
-                      <!-- </div> -->
-                      <div class="absolute">
-                        <p>
-                          A comprehensive online academy offering Quran, Arabic,
-                          and Islamic studies courses tailored for all ages.
-                          Courses include Noorani Qaida, Quran recitation,
-                          memorization, and Islamic studies, taught by certified
-                          instructors. The platform provides personalized 1-on-1
-                          sessions, 24/7 support, and flexible scheduling,
-                          ensuring a convenient and effective learning
-                          experience from home.
-                        </p>
-                        <p>
-                          <a
-                            href="https://alitqanacademy.com/"
-                            class="custom-btn"
-                          >
-                            view Demo</a
-                          >
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <a
+          href="https://alitqanacademy.com/"
+          target="_blank"
+          class="custom-btn"
+        >
+          <li class="menu__item" data-img="images/academy.png">
+            <span class="menu__item-link">Al Itqan Academy</span>
+          </li></a
+        >
 
-      <div class="container">
-        <div class="row no-gutters">
-          <div class="col-md-12 portfolio-wrap">
-            <div class="row no-gutters align-items-center">
-              <div
-                class="col-md-12 img js-fullheight pro"
-                style="
-                  background-image: url(images/toskr.png);
-                  border-radius: 10px;
-                "
-              ></div>
-              <div class="col-md-7">
-                <div class="text pt-5 pl-0 pl-lg-5 pl-md-4 ftco-animate">
-                  <div class="px-4 px-lg-4">
-                    <div class="desc">
-                      <div class="top">
-                        <!-- <span class="subheading"> {12/2022 - 03/2023}</span> -->
-                        <h2 class="mb-4"><a href="work.html">ToskrTail</a></h2>
-                      </div>
-                      <div class="absolute">
-                        <p>
-                          The ToskrTail App is a web-based application developed
-                          using React that helps users manage their tasks,
-                          events, and communication in a single platform. The
-                          app includes features like a <b>mailing system</b>,
-                          task management, event management, and a
-                          <b>chat system</b>.
-                        </p>
-                        <p>
-                          <a
-                            href="https://app.toskrtail.com/"
-                            class="custom-btn"
-                          >
-                            view Demo</a
-                          >
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <li class="menu__item" data-img="images/toskr.png">
+          <span class="menu__item-link">Toskr Mail</span>
+        </li>
+      </ul>
+      <img id="preview-img" src="" alt="Preview" />
+    </div>
 
-
-
-      <!-- <div class="container">
-        <div class="row no-gutters">
-          <div class="col-md-12 portfolio-wrap">
-            <div class="row no-gutters align-items-center">
-              <div
-                class="col-md-5 order-md-last img js-fullheight"
-                style="background-image: url(images/work-4.jpg)"
-              ></div>
-              <div class="col-md-7">
-                <div class="text pt-5 pr-md-5 ftco-animate">
-                  <div class="px-4 px-lg-4">
-                    <div class="desc">
-                      <div class="top">
-                        <span class="subheading">Application {12/06/2019}</span>
-                        <h2 class="mb-4"><a href="work.html">Topless</a></h2>
-                      </div>
-                      <div class="absolute">
-                        <p>
-                          Far far away, behind the word mountains, far from the
-                          countries Vokalia and Consonantia, there live the
-                          blind texts. Separated they live in Bookmarksgrove.
-                        </p>
-                        <p><a href="#" class="custom-btn">View Portfolio</a></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid px-0 portfolio-entry">
-        <div class="row no-gutters d-md-flex justify-content-end text-wrapper">
-          <div
-            class="one-half img js-fullheight"
-            style="background-image: url('images/work-5.jpg')"
-          ></div>
-          <div
-            class="one-half half-text d-flex justify-content-end align-items-center ftco-animate"
-          >
-            <div class="text align-items-center d-flex">
-              <div class="desc pt-5 pl-5 pr-5 pt-lg-0 pl-lg-5 pl-xl-0 pr-xl-0">
-                <div class="top">
-                  <span class="subheading">Writing {12/06/2019}</span>
-                  <h2 class="mb-4"><a href="work.html">Fashion Style</a></h2>
-                </div>
-                <div class="absolute">
-                  <p>
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts. Separated they live in Bookmarksgrove.
-                  </p>
-                  <p><a href="#" class="custom-btn">View Portfolio</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="row no-gutters">
-          <div class="col-md-12 portfolio-wrap">
-            <div class="row no-gutters align-items-center">
-              <div
-                class="col-md-5 img js-fullheight"
-                style="background-image: url(images/work-6.jpg)"
-              ></div>
-              <div class="col-md-7">
-                <div class="text pt-5 pl-md-5 pl-md-4 ftco-animate">
-                  <div class="px-4 px-lg-4">
-                    <div class="desc">
-                      <div class="top">
-                        <span class="subheading"
-                          >Illustration {12/06/2019}</span
-                        >
-                        <h2 class="mb-4"><a href="work.html">Prickly</a></h2>
-                      </div>
-                      <div class="absolute">
-                        <p>
-                          Far far away, behind the word mountains, far from the
-                          countries Vokalia and Consonantia, there live the
-                          blind texts. Separated they live in Bookmarksgrove.
-                        </p>
-                        <p><a href="#" class="custom-btn">View Portfolio</a></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    </section>
-
-    <!-- <section class="ftco-section ftco-portfolio">
-    	<div class="container">
-    		<div class="row">
-	  			<div class="col-md-6 portfolio-wrap ftco-animate">
-	  				<div class="row align-items-center">
-	  					<div class="col-md-12">
-		  					<div class="img js-fullheight" style="background-image: url(images/work-1.jpg);">
-
-		  					</div>
-	  					</div>
-	  					<div class="col-md-12">
-	  						<div class="text">
-	  							<div class="px-0 pt-5">
-	  								<div class="desc">
-		  								<div class="top top-relative">
-			  								<span class="subheading">Web Design {12/06/2019}</span>
-				  							<h2 class="mb-4"><a href="single.html">Midway</a></h2>
-			  							</div>
-			  							<div class="absolute relative">
-				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-				  							<p><a href="single.html" class="custom-btn">View Portfolio</a></p>
-			  							</div>
-		  							</div>
-	  							</div>
-	  						</div>
-	  					</div>
-	  				</div>
-	  			</div>
-	  			<div class="col-md-6 portfolio-wrap ftco-animate">
-	  				<div class="row align-items-center">
-	  					<div class="col-md-12">
-		  					<div class="img js-fullheight" style="background-image: url(images/work-2.jpg);">
-
-		  					</div>
-	  					</div>
-	  					<div class="col-md-12">
-	  						<div class="text">
-	  							<div class="px-0 pt-5">
-	  								<div class="desc">
-		  								<div class="top top-relative">
-			  								<span class="subheading">Writing {12/06/2019}</span>
-				  							<h2 class="mb-4"><a href="single.html">Workplace Office</a></h2>
-			  							</div>
-			  							<div class="absolute relative">
-				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-				  							<p><a href="single.html" class="custom-btn">View Portfolio</a></p>
-			  							</div>
-		  							</div>
-	  							</div>
-	  						</div>
-	  					</div>
-	  				</div>
-	  			</div>
-	  			<div class="col-md-6 portfolio-wrap ftco-animate">
-	  				<div class="row align-items-center">
-	  					<div class="col-md-12">
-		  					<div class="img js-fullheight" style="background-image: url(images/work-3.jpg);">
-
-		  					</div>
-	  					</div>
-	  					<div class="col-md-12">
-	  						<div class="text">
-	  							<div class="px-0 pt-5">
-	  								<div class="desc">
-		  								<div class="top top-relative">
-			  								<span class="subheading">Illustration {12/06/2019}</span>
-				  							<h2 class="mb-4"><a href="single.html">Jacket Leather</a></h2>
-			  							</div>
-			  							<div class="absolute relative">
-				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-				  							<p><a href="single.html" class="custom-btn">View Portfolio</a></p>
-			  							</div>
-		  							</div>
-	  							</div>
-	  						</div>
-	  					</div>
-	  				</div>
-	  			</div>
-	  			<div class="col-md-6 portfolio-wrap ftco-animate">
-	  				<div class="row align-items-center">
-	  					<div class="col-md-12">
-		  					<div class="img js-fullheight" style="background-image: url(images/work-4.jpg);">
-
-		  					</div>
-	  					</div>
-	  					<div class="col-md-12">
-	  						<div class="text">
-	  							<div class="px-0 pt-5">
-	  								<div class="desc">
-		  								<div class="top top-relative">
-			  								<span class="subheading">Application {12/06/2019}</span>
-				  							<h2 class="mb-4"><a href="single.html">Topless</a></h2>
-			  							</div>
-			  							<div class="absolute relative">
-				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-				  							<p><a href="single.html" class="custom-btn">View Portfolio</a></p>
-			  							</div>
-		  							</div>
-	  							</div>
-	  						</div>
-	  					</div>
-	  				</div>
-	  			</div>
-	  			<div class="col-md-6 portfolio-wrap ftco-animate">
-	  				<div class="row align-items-center">
-	  					<div class="col-md-12">
-		  					<div class="img js-fullheight" style="background-image: url(images/work-5.jpg);">
-
-		  					</div>
-	  					</div>
-	  					<div class="col-md-12">
-	  						<div class="text">
-	  							<div class="px-0 pt-5">
-	  								<div class="desc">
-		  								<div class="top top-relative">
-			  								<span class="subheading">Writing {12/06/2019}</span>
-				  							<h2 class="mb-4"><a href="single.html">Fashion Style</a></h2>
-			  							</div>
-			  							<div class="absolute relative">
-				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-				  							<p><a href="single.html" class="custom-btn">View Portfolio</a></p>
-			  							</div>
-		  							</div>
-	  							</div>
-	  						</div>
-	  					</div>
-	  				</div>
-	  			</div>
-	  			<div class="col-md-6 portfolio-wrap ftco-animate">
-	  				<div class="row align-items-center">
-	  					<div class="col-md-12">
-		  					<div class="img js-fullheight" style="background-image: url(images/work-6.jpg);">
-
-		  					</div>
-	  					</div>
-	  					<div class="col-md-12">
-	  						<div class="text">
-	  							<div class="px-0 pt-5">
-	  								<div class="desc">
-		  								<div class="top top-relative">
-			  								<span class="subheading">Illustration {12/06/2019}</span>
-				  							<h2 class="mb-4"><a href="single.html">Prickly</a></h2>
-			  							</div>
-			  							<div class="absolute relative">
-				  							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
-				  							<p><a href="single.html" class="custom-btn">View Portfolio</a></p>
-			  							</div>
-		  							</div>
-	  							</div>
-	  						</div>
-	  					</div>
-	  				</div>
-	  			</div>
-	  		</div>
-    	</div>
-
-    </section> -->
 
     <footer class="ftco-footer ftco-section">
       <div class="container">
@@ -522,8 +227,9 @@
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">About Me</h2>
               <p>
-                Hello, I'm Mohammed Arash, a Fullstack developer passionate about
-                creating visually stunning and user-friendly web interfaces.
+                Hello, I'm Mohammed Arash, a Fullstack developer passionate
+                about creating visually stunning and user-friendly web
+                interfaces.
               </p>
               <ul
                 class="ftco-footer-social list-unstyled float-md-left float-lft mt-5"
@@ -646,5 +352,40 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      const previewImg = document.getElementById("preview-img");
+      const listItems = document.querySelectorAll(".project-list li");
+
+      let mouseX = 0;
+      let mouseY = 0;
+      let currentX = 0;
+      let currentY = 0;
+      const speed = 0.2; // trail smoothness
+
+      function animate() {
+        currentX += (mouseX - currentX) * speed;
+        currentY += (mouseY - currentY) * speed;
+        previewImg.style.transform = `translate(${currentX}px, ${currentY}px)`;
+        requestAnimationFrame(animate);
+      }
+      animate();
+
+      listItems.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+          const imgSrc = item.getAttribute("data-img");
+          previewImg.src = imgSrc;
+          previewImg.style.opacity = 1;
+        });
+
+        item.addEventListener("mousemove", (e) => {
+          mouseX = e.clientX + 20;
+          mouseY = e.clientY - 50;
+        });
+
+        item.addEventListener("mouseleave", () => {
+          previewImg.style.opacity = 0;
+        });
+      });
+    </script>
   </body>
 </html>

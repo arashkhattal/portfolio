@@ -75,6 +75,10 @@
         transition: transform 0.2s ease;
       }
 
+      .active{
+        background-color: #ffbf007b;
+      }
+
       .dock-item i {
         font-size: 24px;
         color: #bcbcbc;
@@ -111,7 +115,7 @@
     >
       <div class="dock-container" id="dock">
         <div
-          class="dock-item"
+          class="dock-item active"
           data-label="Home"
           onclick="window.location.href='index.html'"
         >

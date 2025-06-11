@@ -177,9 +177,40 @@
         background-color: #ffbf007b;
       }
 
+
+      body {
+        cursor: none !important;
+      }
+
+      /* Style the custom cursor */
+      #custom-cursor {
+        position: fixed;
+        width: 36px;
+        height: 36px;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: transform 0.1s ease;
+      }
+
     </style>
   </head>
   <body>
+    <div id="custom-cursor">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="36"
+        height="36"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="#FDCB6E"
+          stroke="#000"
+          stroke-width="2"
+          d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z"
+        />
+      </svg>
+    </div>
     <nav
       class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
       id="ftco-navbar"
@@ -495,5 +526,13 @@
         });
       });
     </script>
+      <script>
+        const cursor = document.getElementById("custom-cursor");
+  
+        window.addEventListener("mousemove", (e) => {
+          cursor.style.left = e.clientX + "px";
+          cursor.style.top = e.clientY + "px";
+        });
+      </script>
   </body>
 </html>
